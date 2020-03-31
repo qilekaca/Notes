@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        [v-cloak] {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+<div id="app">
+<!--    两种解决插值闪烁问题的办法-->
+    <p v-cloak>{{ msg }}</p>
+    <p v-text="msg"></p>
+<!--    这里可以直接输出html代码-->
+    <p v-html="msg"></p>
+    <input type="button" value="干他" v-bind:title="msg" id="btn">
+</div>
+<script>
+    document.getElementById('btn').onclick = function () {
+        alert('hello')
+    }
+</script>
+</body>
+</html>
